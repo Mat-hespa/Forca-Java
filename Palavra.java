@@ -69,11 +69,13 @@ public class Palavra implements Comparable<Palavra>
         return this.texto.length();
     }
 
+    @Override
     public String toString ()
     {
         return this.texto;
     }
 
+    @Override
     public boolean equals (Object obj)
     {
         // verificar se this e obj possuem o mesmo conteúdo, retornando
@@ -87,6 +89,7 @@ public class Palavra implements Comparable<Palavra>
         return true;
     }
 
+    @Override
     public int hashCode ()
     {
         // calcular e retornar o hashcode de this

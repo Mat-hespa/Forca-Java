@@ -33,7 +33,7 @@ public class ControladorDeLetrasJaDigitadas implements Cloneable
         }
         this.letrasJaDigitadas += letra;
     }
-
+    @Override
     public String toString ()
     {
 		// retorna um String com TODAS as letras presentes em
@@ -45,7 +45,7 @@ public class ControladorDeLetrasJaDigitadas implements Cloneable
         }
         return string;
     }
-
+    @Override
     public boolean equals (Object obj)
     {
         // verificar se this e obj são iguais
@@ -57,7 +57,7 @@ public class ControladorDeLetrasJaDigitadas implements Cloneable
         if (this.letrasJaDigitadas != controLetters.letrasJaDigitadas) return false;
         return true;
     }
-
+    @Override
     public int hashCode ()
     {
         // calcular e retornar o hashcode de this

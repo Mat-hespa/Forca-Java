@@ -36,11 +36,13 @@ public class ControladorDeErros implements Cloneable
         return false;
     }
 
+    @Override
     public String toString ()
     {
         return this.qtdErr + "/" + this.qtdMax;
     }
 
+    @Override
     public boolean equals (Object obj)
     {
         // verificar se this e obj possuem o mesmo conteúdo, retornando
@@ -55,11 +57,11 @@ public class ControladorDeErros implements Cloneable
         return true;
     }
 
+    @Override
     public int hashCode ()
     {
         // calcular e retornar o hashcode de this
     }
-
     public ControladorDeErros (ControladorDeErros c) throws Exception // construtor de cópia
     {
         // copiar c.qtdMax e c.qtdErr, respectivamente em, this.qtdMax e this.qtdErr

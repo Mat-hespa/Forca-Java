@@ -48,6 +48,7 @@ public class Tracinhos implements Cloneable
         return false;
     }
 
+    @Override
     public String toString ()
     {
         // retorna um String com TODOS os caracteres que há
@@ -61,6 +62,7 @@ public class Tracinhos implements Cloneable
         return str;
     }
 
+    @Override
     public boolean equals (Object obj)
     {
         // verificar se this e obj possuem o mesmo conteúdo, retornando
@@ -74,6 +76,7 @@ public class Tracinhos implements Cloneable
         return true;
     }
 
+    @Override
     public int hashCode ()
     {
         // calcular e retornar o hashcode de this
