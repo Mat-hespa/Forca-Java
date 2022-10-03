@@ -49,6 +49,13 @@ public class ControladorDeLetrasJaDigitadas implements Cloneable
     public boolean equals (Object obj)
     {
         // verificar se this e obj são iguais
+        if (this == obj) return true;
+        if (obj == null) return false;
+        if (this.getClass() != obj.getClass()) return false;
+
+        ControladorDeLetrasJaDigitadas controLetters = (ControladorDeLetrasJaDigitadas) obj;
+        if (this.letrasJaDigitadas != controLetters.letrasJaDigitadas) return false;
+        return true;
     }
 
     public int hashCode ()

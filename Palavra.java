@@ -78,6 +78,13 @@ public class Palavra implements Comparable<Palavra>
     {
         // verificar se this e obj possuem o mesmo conteúdo, retornando
         // true no caso afirmativo ou false no caso negativo
+        if (this == obj) return true;
+        if (obj == null) return false;
+        if (this.getClass() != obj.getClass()) return false;
+
+        Palavra controlPalavra = (Palavra) obj;
+        if (this.texto != controlPalavra.texto) return false;
+        return true;
     }
 
     public int hashCode ()

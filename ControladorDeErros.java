@@ -46,8 +46,13 @@ public class ControladorDeErros implements Cloneable
         // verificar se this e obj possuem o mesmo conteúdo, retornando
         // true no caso afirmativo ou false no caso negativo
         if (this == obj) return true;
-
         if (obj == null) return false;
+        if (this.getClass() != obj.getClass()) return false;
+
+        ControladorDeErros controlErrors = (ControladorDeErros) obj;
+        if (this.qtdMax != controlErrors.qtdMax) return false;
+        if (this.qtdErr != controlErrors.qtdErr) return false;
+        return true;
     }
 
     public int hashCode ()

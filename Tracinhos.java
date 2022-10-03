@@ -65,6 +65,13 @@ public class Tracinhos implements Cloneable
     {
         // verificar se this e obj possuem o mesmo conteúdo, retornando
         // true no caso afirmativo ou false no caso negativo
+        if (this == obj) return true;
+        if (obj == null) return false;
+        if (this.getClass() != obj.getClass()) return false;
+
+        Tracinhos controlTracinhos = (Tracinhos) obj;
+        if (this.texto != controlTracinhos.texto) return false;
+        return true;
     }
 
     public int hashCode ()
