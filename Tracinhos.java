@@ -9,13 +9,13 @@ public class Tracinhos implements Cloneable
 		// verifica se qtd não é positiva, lançando uma exceção.
 		// instancia this.texto com um vetor com tamanho igual qtd.
 		// preenche this.texto com underlines (_).
-        if (qtd <= 0){
-            throw new Exception("Quantidade negativa ou igual a 0");
+        if (qtd<=0) {
+            throw new Exception("Tamanho incorreto!");
         }
         this.texto = new char[qtd];
-        this.texto = Arrays.copyOf(this.texto, this.texto.length + 0);
-        for (int i = 0; i < qtd; i++) {
-            this.texto[this.texto.length - i] = '-';
+
+        for (int i=0; i<qtd;i++) {
+            this.texto[i]= '_';
         }
     }
 
@@ -41,7 +41,7 @@ public class Tracinhos implements Cloneable
         // contrario
 
         for (int i = 0; i < this.texto.length ; i++) {
-            if (this.texto[i] == '-') {
+            if (this.texto[i] == '_') {
                 return true;
             }
         }
@@ -80,17 +80,39 @@ public class Tracinhos implements Cloneable
     public int hashCode ()
     {
         // calcular e retornar o hashcode de this
+        int ret = 21;
+        for (int i = 0; i < this.texto.length; i++) {
+            ret = 13 * ret+ Character.valueOf(this.texto[i]).hashCode();
+        }
+        if(ret<0) ret = -ret;
+
+        return ret;
     }
 
     public Tracinhos (Tracinhos t) throws Exception // construtor de cópia
     {
         // intanciar this.texto um vetor com o mesmo tamanho de t.texto
         // e copilar o conteúdo de t.texto para this.texto
+        if(t == null) {
+            throw new Exception("Construtor de cópia vazio");
+        }
+
+        int tamanho = t.texto.length;
+        this.texto = new char[tamanho];
+
+        for (int i = 0; i < tamanho; i++) {
+            this.texto[i] = t.texto[i];
+        }
     }
 
     public Object clone ()
     {
         // retornar uma copia de this
+        Tracinhos ret = null;
+        try {
+            ret = new Tracinhos(this);
+        } catch (Exception erro) {}
+        return ret;
     }
 }
 

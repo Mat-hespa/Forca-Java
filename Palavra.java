@@ -37,30 +37,15 @@ public class Palavra implements Comparable<Palavra>
         // e assim por diante.
         // lançar excecao caso nao encontre em this.texto
         // a Iézima aparição da letra fornecida.
-        int[] lis = new int[this.getTamanho()];
-        int k = 0, j = 0, ret=0;
-
-        for(k=0; k < this.getTamanho(); k++)
-        {
-            if(this.texto.charAt(k) == letra)
-            {
-                lis[j] = k;
-                j++;
-                System.out.printf("Achou na posíção: %3d \n", k);
-            }
-
-
-        }
-
-        if (j==0) throw new Exception("Letra não encontrada no texto");
-        else
-        {
-            for(k=0; k < j; k++)
-            {
-                if (k==i) ret = lis[k];
+        int iAux = i+1;
+        int numApair = 0;
+        for(int counter=0;i<this.texto.length();counter++){
+            if(letra == this.texto.charAt(counter)){
+                numApair++;
+                if(numApair == iAux) return counter;
             }
         }
-        return ret;
+        throw new Exception("Letra não existente!");
 
     }
 
@@ -93,6 +78,13 @@ public class Palavra implements Comparable<Palavra>
     public int hashCode ()
     {
         // calcular e retornar o hashcode de this
+        int ret = 23;
+
+        ret = 13*ret+ (this.texto).hashCode();  //new String mostra redundancia, por isso esta somente this.texto
+
+        if(ret<0)ret=-ret;
+
+        return ret;
     }
 
     public int compareTo (Palavra palavra)

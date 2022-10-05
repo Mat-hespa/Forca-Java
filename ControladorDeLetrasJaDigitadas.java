@@ -40,7 +40,7 @@ public class ControladorDeLetrasJaDigitadas implements Cloneable
 		// this.letrasJaDigitadas separadas por vírgula (,).
 
         String string = "";
-        for (int i=0; i<this.letrasJaDigitadas.length()-1; i++) {
+        for (int i=0; i<this.letrasJaDigitadas.length(); i++) {
             string += this.letrasJaDigitadas.charAt(i) + ", ";
         }
         return string;
@@ -61,6 +61,12 @@ public class ControladorDeLetrasJaDigitadas implements Cloneable
     public int hashCode ()
     {
         // calcular e retornar o hashcode de this
+        int ret = 13;
+        ret = 13*ret + new String(this.letrasJaDigitadas).hashCode();
+
+        if(ret<0) ret = -ret;
+
+        return ret;
     }
 
     public ControladorDeLetrasJaDigitadas(
@@ -68,10 +74,21 @@ public class ControladorDeLetrasJaDigitadas implements Cloneable
     throws Exception // construtor de cópia
     {
         // copiar c.letrasJaDigitadas em this.letrasJaDigitadas
+        if(controladorDeLetrasJaDigitadas == null) {
+            throw new Exception("Construtor de cópia vazio");
+        }
+        this.letrasJaDigitadas = controladorDeLetrasJaDigitadas.letrasJaDigitadas;
     }
 
     public Object clone ()
     {
         // criar uma cópia do this com o construtor de cópia e retornar
+        ControladorDeLetrasJaDigitadas ret = null;
+
+        try {
+            ret = new ControladorDeLetrasJaDigitadas(this);
+        } catch (Exception erro) {}
+
+        return ret;
     }
 }

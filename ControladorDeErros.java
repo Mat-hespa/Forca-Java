@@ -61,14 +61,33 @@ public class ControladorDeErros implements Cloneable
     public int hashCode ()
     {
         // calcular e retornar o hashcode de this
+        int ret = 33;
+        ret = 13*ret + Integer.valueOf(this.qtdErr).hashCode();
+        ret = 13*ret + Integer.valueOf(this.qtdMax).hashCode();
+
+        if(ret<0) ret = -ret;
+
+        return ret;
     }
     public ControladorDeErros (ControladorDeErros c) throws Exception // construtor de cópia
     {
         // copiar c.qtdMax e c.qtdErr, respectivamente em, this.qtdMax e this.qtdErr
+        if(c == null) {
+            throw new Exception("Construtor de cópia vazio");
+        }
+        this.qtdMax = c.qtdMax;
+        this.qtdErr = c.qtdErr;
     }
 
     public Object clone ()
     {
         // returnar uma cópia de this
+        ControladorDeErros ret = null;
+
+        try {
+            ret = new ControladorDeErros(this);
+        } catch (Exception erro) {}
+
+        return ret;
     }
 }
