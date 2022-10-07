@@ -70,7 +70,7 @@ public class Palavra implements Comparable<Palavra>
         if (this.getClass() != obj.getClass()) return false;
 
         Palavra controlPalavra = (Palavra) obj;
-        if (this.texto != controlPalavra.texto) return false;
+        if (!this.texto.equals(controlPalavra.texto)) return false;
         return true;
     }
 
