@@ -29,7 +29,7 @@ public class ControladorDeLetrasJaDigitadas implements Cloneable
 		// em caso afirmativo.
 		// concatena a letra fornecida a this.letrasJaDigitadas.
         if (isJaDigitada(letra)){
-            throw new Exception("Letra fornecida já digitada");
+            throw new Exception("Letra fornecida ja digitada");
         }
         this.letrasJaDigitadas += letra;
     }
@@ -75,7 +75,7 @@ public class ControladorDeLetrasJaDigitadas implements Cloneable
     {
         // copiar c.letrasJaDigitadas em this.letrasJaDigitadas
         if(controladorDeLetrasJaDigitadas == null) {
-            throw new Exception("Construtor de cópia vazio");
+            throw new Exception("Construtor de copia vazio");
         }
         this.letrasJaDigitadas = controladorDeLetrasJaDigitadas.letrasJaDigitadas;
     }

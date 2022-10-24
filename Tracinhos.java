@@ -27,7 +27,7 @@ public class Tracinhos implements Cloneable
 		// do vetor this.texto
 
         if (posicao < 0 || posicao >= this.texto.length){
-            throw new Exception("Posição negativa, ou igual ou maior que o tamanho do texto");
+            throw new Exception("Posicao negativa, ou igual ou maior que o tamanho do texto");
         }
         this.texto[posicao] = letra;
     }
@@ -72,7 +72,7 @@ public class Tracinhos implements Cloneable
         if (this.getClass() != obj.getClass()) return false;
 
         Tracinhos controlTracinhos = (Tracinhos) obj;
-        if (!this.texto.equals(controlTracinhos.texto)) return false;
+        if (this.texto.equals(controlTracinhos.texto)) return false;
         return true;
     }
 
@@ -94,7 +94,7 @@ public class Tracinhos implements Cloneable
         // intanciar this.texto um vetor com o mesmo tamanho de t.texto
         // e copilar o conteúdo de t.texto para this.texto
         if(t == null) {
-            throw new Exception("Construtor de cópia vazio");
+            throw new Exception("Construtor de copia vazio");
         }
 
         int tamanho = t.texto.length;

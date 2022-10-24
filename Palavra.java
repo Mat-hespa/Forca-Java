@@ -45,7 +45,7 @@ public class Palavra implements Comparable<Palavra>
                 if(numApair == iAux) return counter;
             }
         }
-        throw new Exception("Letra não existente!");
+        throw new Exception("Letra nao existente!");
 
     }
 
