@@ -4,7 +4,7 @@ import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-public class ScenariosTest {
+public class CenariosTest {
   /*
    Cenário vitorioso
    Nome: ganhaJogoTest
