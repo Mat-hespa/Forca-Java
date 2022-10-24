@@ -4,14 +4,11 @@ import java.util.List;
 public class GFG {
   public static List<Character> removeDuplicate(char str[], int n)
   {
-    // Used as index in the modified string
     int index = 0;
 
-    // Traverse through all characters
     for (int i = 0; i < n; i++)
     {
 
-      // Check if str[i] is present before it
       int j;
       for (j = 0; j < i; j++)
       {
@@ -21,8 +18,6 @@ public class GFG {
         }
       }
 
-      // If not present, then add it to
-      // result.
       if (j == i)
       {
         str[index++] = str[i];
